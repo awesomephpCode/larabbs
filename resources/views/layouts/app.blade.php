@@ -21,6 +21,8 @@
 
     <div class="container">
 
+        {{--提示信息--}}
+        @include('layouts._message')
         @yield('content')
 
     </div>

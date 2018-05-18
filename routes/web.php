@@ -36,5 +36,5 @@ Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 
 
 Route::get('test',function(){
-    dd(route_class());
+    dd(\Auth::id());
 });
