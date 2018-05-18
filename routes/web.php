@@ -28,6 +28,11 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+//用户个人信息   显示&&修改
+//Route::resource('users','UsersController',['only' => ['show','update','edit']]);
+Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 
 
 Route::get('test',function(){
