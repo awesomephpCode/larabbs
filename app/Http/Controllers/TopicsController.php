@@ -20,9 +20,6 @@ class TopicsController extends Controller
       $topics = $topic->withOrder($request->order)->paginate(20);
       return view('topics.index', compact('topics'));;
 
-//      $topics = Topic::with('user', 'category')->paginate(30);
-////	  dd($topics->toArray());
-//      return view('topics.index', compact('topics'));
 	}
 
     public function show(Topic $topic)

@@ -12,4 +12,9 @@ class User extends Authenticatable
   protected $table = 'users';
   protected $fillable = ['name', 'email', 'password','introduction','avatar'];
   protected $hidden = ['password', 'remember_token',];
+
+  public function topics()
+  {
+    return $this->hasMany(Topic::class);
+  }
 }
