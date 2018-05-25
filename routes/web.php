@@ -35,7 +35,11 @@ Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 
 //话题
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+//显示优化的SEO
+Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
+
 
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 //编辑器上传图片

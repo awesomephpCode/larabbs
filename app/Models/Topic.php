@@ -48,4 +48,11 @@ class Topic extends Model
   }
 
 
+  //Slug SEO 路由优化
+  public function link($params = [])
+  {
+      //参数 $params 允许附加 URL 参数的设定
+      return route('topics.show',array_merge([$this->id,$this->slug],$params));
+  }
+
 }
